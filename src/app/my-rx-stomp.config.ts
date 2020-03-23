@@ -2,13 +2,13 @@ import { InjectableRxStompConfig } from '@stomp/ng2-stompjs';
 
 export const myRxStompConfig: InjectableRxStompConfig = {
   // Which server?
-  brokerURL: 'ws://188.10.141.242:6614',
+  brokerURL: 'ws://127.0.0.1:15674/ws',
 
   // Headers
   // Typical keys: login, passcode, host
   connectHeaders: {
     login: 'admin',
-    passcode: 'password'
+    passcode: 'admin'
   },
 
   // How often to heartbeat?

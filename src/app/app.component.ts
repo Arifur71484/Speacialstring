@@ -21,6 +21,7 @@ export class AppComponent implements OnInit , OnDestroy {
 
   ReverseNew : String ;
   ReverseNN : String ;
+  myobj : String ;
  
   urlBroker : string ;
   userName  : string ;
@@ -62,7 +63,7 @@ export class AppComponent implements OnInit , OnDestroy {
         (message: Message) => {    
           console.log("message.body", message.body); 
           this.ReverseNew = JSON.parse(message.body).value;
-
+            
         },
         (err) => {
           console.log(err);
@@ -75,7 +76,12 @@ export class AppComponent implements OnInit , OnDestroy {
     const Newname= form.value.name;     
     this.New =  this.reverse(Newname);
     this.ReverseNN  = this.ReverseNew ;
-    
+    var str1 = "$£"; 
+    var str3 ="£$"; 
+    var res=  this.ReverseNN.concat( str1, str3 ); 
+    var nrt = str1 + res ;
+
+    this.myobj=  nrt ;
     console.log(this.New);
   }
 
